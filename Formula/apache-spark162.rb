@@ -1,4 +1,4 @@
-class ApacheSpark < Formula
+class ApacheSpark162 < Formula
   desc "Engine for large-scale data processing"
   homepage "https://spark.apache.org/"
   url "https://www.apache.org/dyn/closer.lua?path=spark/spark-1.6.2/spark-1.6.2-bin-hadoop2.6.tgz"
@@ -7,6 +7,8 @@ class ApacheSpark < Formula
   head "https://github.com/apache/spark.git"
 
   bottle :unneeded
+  
+	conflicts_with "apache-spark", :because => "Differing version of same formula"
 
   def install
     # Rename beeline to distinguish it from hive's beeline
